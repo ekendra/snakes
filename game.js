@@ -8,6 +8,10 @@ let food = { x: 0, y: 0 };
 let score = 0;
 let gameInterval;
 
+// New references for score display and replay button
+const scoreBox = document.getElementById('scoreBox');
+const replayBtn = document.getElementById('replayBtn');
+
 function getRandomPosition() {
   return {
     x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
@@ -39,7 +43,8 @@ function draw() {
     snake.some(segment => segment.x === head.x && segment.y === head.y)
   ) {
     clearInterval(gameInterval);
-    alert(`Game Over! Your score: ${score}`);
+    scoreBox.textContent = `Game Over! Final Score: ${score}`;
+    replayBtn.style.display = "block";
     return;
   }
 
@@ -48,6 +53,7 @@ function draw() {
   // Check for food consumption
   if (head.x === food.x && head.y === food.y) {
     score++;
+    scoreBox.textContent = `Score: ${score}`;
     food = getRandomPosition();
   } else {
     snake.pop();
@@ -74,8 +80,13 @@ function startGame() {
   direction = { x: gridSize, y: 0 };
   food = getRandomPosition();
   score = 0;
+  scoreBox.textContent = `Score: ${score}`;
+  replayBtn.style.display = "none";
   clearInterval(gameInterval);
   gameInterval = setInterval(draw, 100);
 }
+
+// Replay button logic
+replayBtn.addEventListener('click', startGame);
 
 startGame();
