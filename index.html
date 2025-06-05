@@ -1,10 +1,29 @@
 <body>
   <div id="gameContainer" style="display: flex; flex-direction: column; align-items: center;">
     <div id="scoreBox" style="margin-bottom: 10px; font-size: 20px; font-weight: bold;">Score: 0</div>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
     <button id="replayBtn" style="margin-top: 10px; display: none;">Replay</button>
+    <button id="showInstructionsBtn" style="margin-top: 10px;">Show Instructions</button>
+    <div id="instructionsBox" style="margin-top: 10px; display: none; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #f9f9f9;">
+      <strong>How to Play:</strong>
+      <ul>
+        <li>Swipe <b>Up, Down, Left, Right</b> on your smartphone to control the snake.</li>
+        <li>Use <b>Arrow keys</b> to control the snake on desktop.</li>
+        <li>Eat the blue food to grow and score points.</li>
+        <li>Avoid hitting the walls or yourself.</li>
+        <li>Press <b>Replay</b> to start again!</li>
+      </ul>
+    </div>
   </div>
   <script src="game.js"></script>
   <script src="pi-integration.js"></script>
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+  <script>
+    const showInstructionsBtn = document.getElementById('showInstructionsBtn');
+    const instructionsBox = document.getElementById('instructionsBox');
+
+    showInstructionsBtn.addEventListener('click', () => {
+      instructionsBox.style.display = instructionsBox.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 </body>
