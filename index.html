@@ -1,20 +1,40 @@
 <body>
+  <h1 id="gameTitle" style="text-align:center; margin-bottom: 0; color: #388e3c; letter-spacing: 2px; font-family: 'Segoe UI', Arial, sans-serif;">Classic Snake Game</h1>
   <div id="gameContainer" style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; justify-content: flex-end; gap: 16px; margin-bottom: 10px; width: 100%; max-width: 600px;">
+      <select id="languageSelect" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #bbb;">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <!-- Add more languages as needed -->
+      </select>
+      <select id="themeSelect" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #bbb;">
+        <option value="dark">Dark Theme</option>
+        <option value="light">Light Theme</option>
+      </select>
+    </div>
+    <div id="highScoreBox"></div>
     <div id="scoreBox" style="margin-bottom: 10px; font-size: 20px; font-weight: bold;">Score: 0</div>
+    <hr style="width:80%; border:1px solid #eee; margin: 10px 0 18px 0;">
     <canvas id="gameCanvas" width="500" height="500"></canvas>
     <button id="replayBtn" style="margin-top: 10px; display: none;">Replay</button>
     <button id="showInstructionsBtn" style="margin-top: 10px;">Show Instructions</button>
     <div id="instructionsBox" style="margin-top: 10px; display: none; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #f9f9f9;">
       <strong>How to Play:</strong>
       <ul>
-        <li>Swipe <b>Up, Down, Left, Right</b> on your smartphone to control the snake.</li>
         <li>Use <b>Arrow keys</b> to control the snake on desktop.</li>
+        <li>Swipe <b>Up, Down, Left, Right</b> on your smartphone to control the snake.</li>
         <li>Eat the blue food to grow and score points.</li>
         <li>Avoid hitting the walls or yourself.</li>
         <li>Press <b>Replay</b> to start again!</li>
       </ul>
     </div>
   </div>
+  <footer style="text-align:center; margin-top: 24px; color: #888; font-size: 0.95em;">
+    Made with ❤️ for Pi Network Ecosystem<br>
+    <a href="pp.html" style="color:#388e3c; text-decoration:underline; margin-right:16px;">Privacy Policy</a>
+    <a href="tos.html" style="color:#388e3c; text-decoration:underline;">Terms of Service</a>
+  </footer>
   <script src="game.js"></script>
   <script src="pi-integration.js"></script>
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>

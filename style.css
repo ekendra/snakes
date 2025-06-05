@@ -5,10 +5,11 @@
 }
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  background-color: #000;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   margin: 0;
 }
 canvas {
@@ -28,17 +29,18 @@ canvas {
   border: 4px solid #4caf50; /* Green border for container */
   border-radius: 16px;
   box-shadow: 0 4px 24px #000a;
-  padding: 20px; /* Adjusted padding */
-  color: #fff; /* Default text color for the container */
+  padding: 24px 32px 32px 32px; /* Adjusted padding */
+  margin-top: 18px;
 }
 
 /* Score display styling */
 #scoreBox, #highScoreBox {
   font-size: 22px; /* Larger font size */
   font-weight: bold;
-  margin-bottom: 12px; /* Space below scores */
+  margin-bottom: 8px; /* Space below scores */
   color: #fff; /* White color for better contrast on dark background */
   text-shadow: 1px 1px 2px #000; /* Subtle text shadow */
+  text-align: center;
 }
 
 #highScoreBox {
@@ -59,6 +61,7 @@ button {
   cursor: pointer;
   border-radius: 8px; /* Rounded corners for buttons */
   transition: background-color 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 8px #0002;
 }
 
 button:hover {
@@ -94,4 +97,11 @@ button:hover {
 
 #instructionsBox li {
   margin-bottom: 5px; /* Space between list items */
+}
+
+footer {
+  margin-top: 24px;
+  color: #888;
+  font-size: 0.95em;
+  letter-spacing: 1px;
 }
